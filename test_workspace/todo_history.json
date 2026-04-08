@@ -1,0 +1,54 @@
+{
+  "completed": [
+    {
+      "content": "Fixed login bug",
+      "completed_at": "2026-04-08T02:48:16.519697+00:00",
+      "list_type": "log_done",
+      "priority": "medium",
+      "notes": "Changed reset flow"
+    },
+    {
+      "content": "Test task 1",
+      "completed_at": "2026-04-08T02:47:47.306423+00:00",
+      "list_type": "daily",
+      "priority": "high",
+      "created_at": "2026-04-08T02:47:41.755061+00:00"
+    }
+  ],
+  "by_date": {
+    "2026-04-08": [
+      {
+        "content": "Test task 1",
+        "completed_at": "2026-04-08T02:47:47.306423+00:00",
+        "list_type": "daily",
+        "priority": "high",
+        "created_at": "2026-04-08T02:47:41.755061+00:00"
+      },
+      {
+        "content": "Fixed login bug",
+        "completed_at": "2026-04-08T02:48:16.519697+00:00",
+        "list_type": "log_done",
+        "priority": "medium",
+        "notes": "Changed reset flow"
+      }
+    ]
+  },
+  "by_month": {
+    "2026-04": [
+      {
+        "content": "Test task 1",
+        "completed_at": "2026-04-08T02:47:47.306423+00:00",
+        "list_type": "daily",
+        "priority": "high",
+        "created_at": "2026-04-08T02:47:41.755061+00:00"
+      },
+      {
+        "content": "Fixed login bug",
+        "completed_at": "2026-04-08T02:48:16.519697+00:00",
+        "list_type": "log_done",
+        "priority": "medium",
+        "notes": "Changed reset flow"
+      }
+    ]
+  }
+}

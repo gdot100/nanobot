@@ -70,6 +70,9 @@ matrix = [
 discord = [
     "discord.py>=2.5.2,<3.0.0",
 ]
+snapchat = [
+    "playwright>=1.40.0,<2.0.0",
+]
 langsmith = [
     "langsmith>=0.1.0",
 ]

@@ -1,12 +1,13 @@
 """OpenAI-compatible HTTP API server for a fixed nanobot session.
 
-Provides /v1/chat/completions and /v1/models endpoints.
+Provides /v1/chat/completions, /v1/models, and /webhook/apple-health endpoints.
 All requests route to a single persistent API session.
 """
 
 from __future__ import annotations
 
 import asyncio
+import json
 import time
 import uuid
 from typing import Any
@@ -171,6 +172,59 @@ async def handle_health(request: web.Request) -> web.Response:
     return web.json_response({"status": "ok"})
 
 
+async def handle_apple_health_webhook(request: web.Request) -> web.Response:
+    """POST /webhook/apple-health — receives Apple Health data from iOS Shortcut."""
+    try:
+        body = await request.json()
+    except Exception:
+        return _error_json(400, "Invalid JSON body")
+
+    data_type = body.get("type", "health_data")
+    entries = body.get("entries", [])
+    date = body.get("date", "")
+
+    if not entries:
+        return web.json_response({"status": "ok", "message": "No entries received"})
+
+    agent_loop = request.app["agent_loop"]
+    timeout_s: float = request.app.get("request_timeout", 120.0)
+    session_key = "webhook:apple-health"
+    session_locks: dict[str, asyncio.Lock] = request.app["session_locks"]
+    session_lock = session_locks.setdefault(session_key, asyncio.Lock())
+
+    health_entries = "\n".join(
+        f"  {e.get('type', '?')}: {e.get('value', '?')} {e.get('unit', '')}"
+        for e in entries
+    )
+    message = (
+        f"Apple Health data for {date}:\n{health_entries}\n\n"
+        f"Please process this health data: log any weight entries to the health tracker, "
+        f"log any exercise/workout data to the exercise tracker, and give me a summary."
+    )
+
+    logger.info("Apple Health webhook received: {} entries for {}", len(entries), date)
+
+    try:
+        async with session_lock:
+            response = await asyncio.wait_for(
+                agent_loop.process_direct(
+                    content=message,
+                    session_key=session_key,
+                    channel="api",
+                    chat_id=API_CHAT_ID,
+                ),
+                timeout=timeout_s,
+            )
+            response_text = _response_text(response)
+    except asyncio.TimeoutError:
+        return _error_json(504, f"Request timed out after {timeout_s}s")
+    except Exception:
+        logger.exception("Error processing Apple Health webhook")
+        return _error_json(500, "Internal server error", err_type="server_error")
+
+    return web.json_response({"status": "ok", "response": response_text})
+
+
 # ---------------------------------------------------------------------------
 # App factory
 # ---------------------------------------------------------------------------
@@ -192,4 +246,5 @@ def create_app(agent_loop, model_name: str = "nanobot", request_timeout: float =
     app.router.add_post("/v1/chat/completions", handle_chat_completions)
     app.router.add_get("/v1/models", handle_models)
     app.router.add_get("/health", handle_health)
+    app.router.add_post("/webhook/apple-health", handle_apple_health_webhook)
     return app

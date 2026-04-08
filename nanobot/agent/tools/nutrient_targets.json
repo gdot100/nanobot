@@ -1,0 +1,335 @@
+{
+  "targets": {
+    "calories": {
+      "name": "Calories",
+      "unit": "kcal",
+      "default_target": 2000,
+      "category": "energy"
+    },
+    "protein": {
+      "name": "Protein",
+      "unit": "g",
+      "default_target": 50,
+      "category": "macronutrient"
+    },
+    "carbohydrate": {
+      "name": "Carbohydrate",
+      "unit": "g",
+      "default_target": 275,
+      "category": "macronutrient"
+    },
+    "fat": {
+      "name": "Fat",
+      "unit": "g",
+      "default_target": 78,
+      "category": "macronutrient"
+    },
+    "fiber": {
+      "name": "Fiber",
+      "unit": "g",
+      "default_target": 28,
+      "category": "macronutrient"
+    },
+    "sugar": {
+      "name": "Sugars",
+      "unit": "g",
+      "default_target": 50,
+      "upper_limit": true,
+      "category": "macronutrient"
+    },
+    "starch": {
+      "name": "Starch",
+      "unit": "g",
+      "default_target": null,
+      "category": "macronutrient"
+    },
+    "saturated_fat": {
+      "name": "Saturated Fat",
+      "unit": "g",
+      "default_target": 20,
+      "upper_limit": true,
+      "category": "fatty_acid"
+    },
+    "monounsaturated_fat": {
+      "name": "Monounsaturated Fat",
+      "unit": "g",
+      "default_target": null,
+      "category": "fatty_acid"
+    },
+    "polyunsaturated_fat": {
+      "name": "Polyunsaturated Fat",
+      "unit": "g",
+      "default_target": null,
+      "category": "fatty_acid"
+    },
+    "trans_fat": {
+      "name": "Trans Fat",
+      "unit": "g",
+      "default_target": 0,
+      "upper_limit": true,
+      "category": "fatty_acid"
+    },
+    "omega_3": {
+      "name": "Omega-3",
+      "unit": "g",
+      "default_target": 1.6,
+      "category": "fatty_acid"
+    },
+    "omega_6": {
+      "name": "Omega-6",
+      "unit": "g",
+      "default_target": 17,
+      "category": "fatty_acid"
+    },
+    "cholesterol": {
+      "name": "Cholesterol",
+      "unit": "mg",
+      "default_target": 300,
+      "upper_limit": true,
+      "category": "other"
+    },
+    "water": {
+      "name": "Water",
+      "unit": "g",
+      "default_target": 2700,
+      "category": "other"
+    },
+    "caffeine": {
+      "name": "Caffeine",
+      "unit": "mg",
+      "default_target": null,
+      "upper_limit": true,
+      "category": "other"
+    },
+    "alcohol": {
+      "name": "Alcohol",
+      "unit": "g",
+      "default_target": null,
+      "upper_limit": true,
+      "category": "other"
+    },
+    "vitamin_a": {
+      "name": "Vitamin A",
+      "unit": "mcg",
+      "default_target": 900,
+      "category": "vitamin"
+    },
+    "vitamin_c": {
+      "name": "Vitamin C",
+      "unit": "mg",
+      "default_target": 90,
+      "category": "vitamin"
+    },
+    "vitamin_d": {
+      "name": "Vitamin D",
+      "unit": "mcg",
+      "default_target": 20,
+      "category": "vitamin"
+    },
+    "vitamin_e": {
+      "name": "Vitamin E",
+      "unit": "mg",
+      "default_target": 15,
+      "category": "vitamin"
+    },
+    "vitamin_k": {
+      "name": "Vitamin K",
+      "unit": "mcg",
+      "default_target": 120,
+      "category": "vitamin"
+    },
+    "thiamin": {
+      "name": "Thiamin (B1)",
+      "unit": "mg",
+      "default_target": 1.2,
+      "category": "vitamin"
+    },
+    "riboflavin": {
+      "name": "Riboflavin (B2)",
+      "unit": "mg",
+      "default_target": 1.3,
+      "category": "vitamin"
+    },
+    "niacin": {
+      "name": "Niacin (B3)",
+      "unit": "mg",
+      "default_target": 16,
+      "category": "vitamin"
+    },
+    "vitamin_b5": {
+      "name": "Pantothenic Acid (B5)",
+      "unit": "mg",
+      "default_target": 5,
+      "category": "vitamin"
+    },
+    "vitamin_b6": {
+      "name": "Vitamin B6",
+      "unit": "mg",
+      "default_target": 1.7,
+      "category": "vitamin"
+    },
+    "biotin": {
+      "name": "Biotin (B7)",
+      "unit": "mcg",
+      "default_target": 30,
+      "category": "vitamin"
+    },
+    "folate": {
+      "name": "Folate (B9)",
+      "unit": "mcg",
+      "default_target": 400,
+      "category": "vitamin"
+    },
+    "vitamin_b12": {
+      "name": "Vitamin B12",
+      "unit": "mcg",
+      "default_target": 2.4,
+      "category": "vitamin"
+    },
+    "choline": {
+      "name": "Choline",
+      "unit": "mg",
+      "default_target": 550,
+      "category": "vitamin"
+    },
+    "calcium": {
+      "name": "Calcium",
+      "unit": "mg",
+      "default_target": 1300,
+      "category": "mineral"
+    },
+    "iron": {
+      "name": "Iron",
+      "unit": "mg",
+      "default_target": 18,
+      "category": "mineral"
+    },
+    "magnesium": {
+      "name": "Magnesium",
+      "unit": "mg",
+      "default_target": 420,
+      "category": "mineral"
+    },
+    "phosphorus": {
+      "name": "Phosphorus",
+      "unit": "mg",
+      "default_target": 1250,
+      "category": "mineral"
+    },
+    "potassium": {
+      "name": "Potassium",
+      "unit": "mg",
+      "default_target": 4700,
+      "category": "mineral"
+    },
+    "sodium": {
+      "name": "Sodium",
+      "unit": "mg",
+      "default_target": 2300,
+      "upper_limit": true,
+      "category": "mineral"
+    },
+    "zinc": {
+      "name": "Zinc",
+      "unit": "mg",
+      "default_target": 11,
+      "category": "mineral"
+    },
+    "copper": {
+      "name": "Copper",
+      "unit": "mg",
+      "default_target": 0.9,
+      "category": "mineral"
+    },
+    "manganese": {
+      "name": "Manganese",
+      "unit": "mg",
+      "default_target": 2.3,
+      "category": "mineral"
+    },
+    "selenium": {
+      "name": "Selenium",
+      "unit": "mcg",
+      "default_target": 55,
+      "category": "mineral"
+    },
+    "iodine": {
+      "name": "Iodine",
+      "unit": "mcg",
+      "default_target": 150,
+      "category": "mineral"
+    },
+    "chromium": {
+      "name": "Chromium",
+      "unit": "mcg",
+      "default_target": 35,
+      "category": "mineral"
+    },
+    "molybdenum": {
+      "name": "Molybdenum",
+      "unit": "mcg",
+      "default_target": 45,
+      "category": "mineral"
+    },
+    "chloride": {
+      "name": "Chloride",
+      "unit": "mg",
+      "default_target": 2300,
+      "category": "mineral"
+    },
+    "tryptophan": {
+      "name": "Tryptophan",
+      "unit": "g",
+      "default_target": 0.35,
+      "category": "amino_acid"
+    },
+    "threonine": {
+      "name": "Threonine",
+      "unit": "g",
+      "default_target": 1.05,
+      "category": "amino_acid"
+    },
+    "isoleucine": {
+      "name": "Isoleucine",
+      "unit": "g",
+      "default_target": 1.05,
+      "category": "amino_acid"
+    },
+    "leucine": {
+      "name": "Leucine",
+      "unit": "g",
+      "default_target": 2.73,
+      "category": "amino_acid"
+    },
+    "lysine": {
+      "name": "Lysine",
+      "unit": "g",
+      "default_target": 2.66,
+      "category": "amino_acid"
+    },
+    "methionine": {
+      "name": "Methionine",
+      "unit": "g",
+      "default_target": 1.05,
+      "category": "amino_acid"
+    },
+    "phenylalanine": {
+      "name": "Phenylalanine",
+      "unit": "g",
+      "default_target": 1.75,
+      "category": "amino_acid"
+    },
+    "valine": {
+      "name": "Valine",
+      "unit": "g",
+      "default_target": 1.4,
+      "category": "amino_acid"
+    },
+    "histidine": {
+      "name": "Histidine",
+      "unit": "g",
+      "default_target": 0.7,
+      "category": "amino_acid"
+    }
+  }
+}
